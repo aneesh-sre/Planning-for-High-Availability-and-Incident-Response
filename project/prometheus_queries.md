@@ -7,7 +7,9 @@
 
 ## Latency SLI
 ### 90% of requests finish in these times
-
+(sum(rate(flask_http_request_duration_seconds_bucket{le="0.1"}[5m])) 
+ /
+ sum(rate(flask_http_request_total[5m]))) * 100
 
 ## Throughput
 ### Successful requests per second
