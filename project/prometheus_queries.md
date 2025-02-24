@@ -13,9 +13,7 @@
 
 ## Throughput
 ### Successful requests per second
-1 - ((1 - (sum(increase(flask_http_request_total{status=~"2.."}[7d])) by (verb)) 
-           / sum(increase(flask_http_request_total[7d])) by (verb))) 
-     / (1 - 0.90)
+sum(rate(flask_http_request_total[1m]))
 
 ## Error Budget - Remaining Error Budget
 ### The error budget is 20%
