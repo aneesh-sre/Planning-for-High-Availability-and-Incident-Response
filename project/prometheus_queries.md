@@ -20,3 +20,7 @@
 ## Error Budget - Remaining Error Budget
 ### The error budget is 20%
 
+1 - ((1 - (sum(increase(flask_http_request_total{status=~"2.."}[7d])) by (verb)) 
+           / sum(increase(flask_http_request_total[7d])) by (verb))) 
+     / (1 - 0.90)
+
