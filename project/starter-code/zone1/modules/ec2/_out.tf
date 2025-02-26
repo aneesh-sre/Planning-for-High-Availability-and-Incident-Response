@@ -1,5 +1,5 @@
 output "aws_instance" {
-   value = aws_instance.ubuntu
+   value = aws_instance.ubuntu[*].id
  }
 
  output "ec2_sg" {
